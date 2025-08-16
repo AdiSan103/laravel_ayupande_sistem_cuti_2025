@@ -117,27 +117,65 @@
                 
                 <li
                   class="sidebar-item ">
-                    <a href="/v" class='sidebar-link'>
+                    <a href="/e" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Dashboard</span>
                     </a>
                 </li>
 
-                <!-- Menu -->
                 <li
+                  class="sidebar-item ">
+                    <a href="/e/permohonan-cuti" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Permohonan Cuti</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/e/verifikasi" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Verifikasi</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/e/status" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Status</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/e/rekapitulasi" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Rekapitulasi</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/e/profile" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+                <!-- Menu -->
+                <!-- <li
                     class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
                         <span>Employee</span>
                     </a>
-                    <!-- Menu List -->
                     <ul class="submenu ">
-                        <!-- Menu List item -->
                         <li class="submenu-item  ">
                             <a href="#" class="submenu-link">Data#</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <!-- Logout -->
                 <li class="sidebar-item">
@@ -170,7 +208,7 @@
         <footer>
           <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-              <p>2023 &copy;  Angga Bali Trans 2025</p>
+              <p>2023 &copy;  SIstem Cuti  2025</p>
             </div>
             <div class="float-end">
               <p>

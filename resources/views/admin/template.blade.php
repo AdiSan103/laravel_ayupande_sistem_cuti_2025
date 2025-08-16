@@ -123,21 +123,59 @@
                     </a>
                 </li>
 
-                <!-- Menu -->
                 <li
+                  class="sidebar-item ">
+                    <a href="/a/validasi" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Validasi</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/a/manajemen-cuti" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Management Cuti</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/a/pegawai" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Data Pegawai</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/a/rekapitulasi" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Rekapitulasi</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
+                    <a href="/a/profile" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+
+                <!-- Menu -->
+                <!-- <li
                     class="sidebar-item  has-sub">
                     <a href="#" class='sidebar-link'>
                         <i class="bi bi-collection-fill"></i>
                         <span>Admin</span>
                     </a>
-                    <!-- Menu List -->
                     <ul class="submenu ">
-                        <!-- Menu List item -->
                         <li class="submenu-item  ">
                             <a href="#" class="submenu-link">Data Akun Admin</a>
                         </li>
                     </ul>
-                </li>
+                </li> -->
 
                 <!-- Menu -->
                 <li

@@ -33,7 +33,7 @@
         <div class="col-lg-5 col-12">
           <div id="auth-left">
             <div class="auth-logo">
-            <h3>Angga Bali Trans</h3>
+            <h3>SIstem Cuti </h3>
             </div>
             <h1 class="auth-title">Log in.</h1>
             <p class="auth-subtitle mb-5">
