@@ -1,18 +1,19 @@
-@extends('admin.template')
+@extends('employee.template')
 
 @section('main')
 <div class="card">
   <div class="card-body">
-    <h3>REKAPAN CUTI PEGAWAI</h3>
+    <h3>DATA CUTI PEGAWAI DINAS KOMUNIKASI DAN INFORMATIKA KABUPATEN BADUNG</h3>
     <table class="table table-striped" id="table1">
         <thead>
             <tr>
                 <th>No</th>
-                <th>NIP</th>
                 <th>Nama</th>
-                <th>Bidang</th>
+                <th>Tanggal Awal Cuti</th>
+                <th>Tanggal Akhir Cuti</th>
+                <th>Lama Cuti</th>
+                <th>Jenis Cuti</th>
                 <th>Status</th>
-                <th>Rekapitulasi Cuti</th>
             </tr>
         </thead>
         <tbody>

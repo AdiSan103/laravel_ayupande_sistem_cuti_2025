@@ -13,6 +13,16 @@ class aProfile extends Controller
      */
     public function index(): View
     {
-        return view('admin.profile.index');
+        $genders = collect([
+            (object) [
+                'id' => 1,
+                'name' => 'LAKI-LAKI'
+            ],
+            (object) [
+                'id' => 2,
+                'name' => 'PEREMPUAN'
+            ]
+        ]);
+        return view('admin.profile.index', compact('genders'));
     }
 }

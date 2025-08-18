@@ -13,6 +13,16 @@ class ePermohonanCuti extends Controller
      */
     public function index(): View
     {
-        return view('employee.permohonan-cuti.index');
+        $dummy_data = collect([
+            (object) [
+                'id' => 1,
+                'name' => 'Project A',
+            ],
+            (object) [
+                'id' => 2,
+                'name' => 'Project B',
+            ],
+        ]);
+        return view('employee.permohonan-cuti.index', compact('dummy_data'));
     }
 }

@@ -13,6 +13,16 @@ class eProfile extends Controller
      */
     public function index(): View
     {
-        return view('employee.profile.index');
+        $genders = collect([
+            (object) [
+                'id' => 1,
+                'name' => 'LAKI-LAKI'
+            ],
+            (object) [
+                'id' => 2,
+                'name' => 'PEREMPUAN'
+            ]
+        ]);
+        return view('employee.profile.index', compact('genders'));
     }
 }

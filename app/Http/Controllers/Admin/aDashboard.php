@@ -13,6 +13,19 @@ class aDashboard extends Controller
      */
     public function index(): View
     {
-        return view('admin.index');
+        $profileVisit = [9, 20, 30, 20, 10, 20, 30, 20, 10, 20, 30, 20];
+        $visitorsProfile = [70, 15,15]; // Male, Female
+        $europeSeries = [310, 800, 600, 430, 540, 340, 605, 805, 430, 540, 340, 605];
+        $americaSeries = [400, 700, 500, 600, 520, 450, 600, 750, 500, 520, 400, 580];
+        $indonesiaSeries = [250, 500, 450, 300, 420, 350, 500, 600, 400, 450, 300, 500];
+
+
+        return view('admin.index', compact(
+            'profileVisit',
+            'visitorsProfile',
+            'europeSeries',
+            'americaSeries',
+            'indonesiaSeries'
+        ));
     }
 }

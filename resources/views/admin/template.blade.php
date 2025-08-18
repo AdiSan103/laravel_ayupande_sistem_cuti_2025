@@ -232,7 +232,7 @@
         <footer>
           <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-              <p>2023 &copy;  Angga Bali Trans 2025</p>
+              <p>2023 &copy;  DisanJaya 2025</p>
             </div>
             <div class="float-end">
               <p>
@@ -240,7 +240,7 @@
                 <span class="text-danger"
                   ><i class="bi bi-heart-fill icon-mid"></i
                 ></span>
-                by <a href="#">Ericka</a>
+                by <a href="#">DisanJaya</a>
               </p>
             </div>
           </div>
@@ -254,8 +254,11 @@
 
     <!-- Need: Apexcharts -->
     <script src="/assets/extensions/apexcharts/apexcharts.min.js"></script>
-    <script src="/assets/static/js/pages/dashboard.js"></script>
+    <!-- <script src="/assets/static/js/pages/dashboard.js"></script> -->
 
     @yield('js')
+    
+    @stack('scripts')
+
   </body>
 </html>

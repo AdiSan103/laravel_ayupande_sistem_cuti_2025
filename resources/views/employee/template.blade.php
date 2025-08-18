@@ -216,7 +216,7 @@
                 <span class="text-danger"
                   ><i class="bi bi-heart-fill icon-mid"></i
                 ></span>
-                by <a href="#">Ericka</a>
+                by <a href="#">DisanJaya</a>
               </p>
             </div>
           </div>
@@ -229,5 +229,8 @@
     <script src="/assets/compiled/js/app.js"></script>
 
     @yield('js')
+
+    @stack('scripts')
+
   </body>
 </html>

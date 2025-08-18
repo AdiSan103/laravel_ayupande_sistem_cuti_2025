@@ -5,22 +5,22 @@
 
       <!-- old input -->
       @foreach($items as $item)
-        @if(old($name) == $item->no)
-          <option value="{{$item->no}}">{{$item->$item_label}}</option>
+        @if(old($name) == $item->$id)
+          <option value="{{$item->$id}}">{{$item->$item_label}}</option>
         @endif
       @endforeach
 
       <!-- input before -->
       @foreach($items as $item)
-        @if($another_old_input == $item->no)
-          <option value="{{$item->no}}">{{$item->$item_label}}</option>
+        @if($another_old_input == $item->$id)
+          <option value="{{$item->$id}}">{{$item->$item_label}}</option>
         @endif
       @endforeach
 
       <!-- another option select -->
       @foreach($items as $item)
-        @if(old($name) != $item->no && $another_old_input != $item->no)
-          <option value="{{$item->no}}">{{$item->$item_label}}</option>
+        @if(old($name) != $item->$id && $another_old_input != $item->$id)
+          <option value="{{$item->$id}}">{{$item->$item_label}}</option>
         @endif
       @endforeach
     </select>
