@@ -7,20 +7,27 @@
     <table class="table table-striped" id="table1">
         <thead>
             <tr>
-                <th>No</th>
-                <th>Nama</th>
-                <th>Bidang</th>
-                <th>NO.Telp</th>
-                <th>Email</th>
-                <th>Status</th>
-                <th>Masa Kerja</th>
-                <th>Aksi</th>
+                <th>NAMA</th>
+                <th>JABATAN</th>
+                <th>TELP</th>
+                <th>EMAIL</th>
+                <th>MASA KERJA</th>
+                <th>AKSI</th>
             </tr>
         </thead>
         <tbody>
+          @foreach($users as $item)
             <tr>
-              <td></td>
+              <td>{{$item->nama}}</td>
+              <td>{{$item->jabatan}}</td>
+              <td>{{$item->telp}}</td>
+              <td>{{$item->email}}</td>
+              <td>{{$item->masa_kerja}}</td>
+              <td>
+                <a href="/a/pegawai/{{$item->id}}" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">DETAIL</a>
+              </td>
             </tr>
+          @endforeach
         </tbody>
     </table>
   </div>

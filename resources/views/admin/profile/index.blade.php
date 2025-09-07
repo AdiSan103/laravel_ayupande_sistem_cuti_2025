@@ -3,98 +3,79 @@
 @section('main')
 <div class="card">
   <div class="card-body">
-    <form action="/p/" method="POST">
+    <form action="/a/profile/save" method="POST"  enctype="multipart/form-data">
         @csrf
         <div class="row gap-2">
           <div class="col-12">
-            @include('components.input_image',[
-              'name' => 'image_1',
-              'title' => 'Main Image',
-              'another_old_input' => '',
-            ])
-          </div>
-          <div class="col-12">
             @include('components.input',[
               'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
-              'title' => 'NIP',
-              'type' => 'text',
-              'another_old_input' => ''
-            ])
-          </div>
-          <div class="col-12">
-            @include('components.select',[
-              'title' => 'JENIS KELAMIN',
-              'name' => 'id_project_categories',
-              'items' => $genders,
-              'another_old_input' => '',
-              'id' => 'id',
-              'item_label' => 'name'
-            ])
-          </div>
-          <div class="col-12">
-            @include('components.input',[
-              'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
-              'title' => 'TANGGAL LAHIR',
-              'type' => 'date',
-              'another_old_input' => ''
-            ])
-          </div>
-          <div class="col-12">
-            @include('components.input',[
-              'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
+              'name' => 'nama',
+              'error_name' => 'nama',
               'title' => 'NAMA',
               'type' => 'text',
-              'another_old_input' => ''
+              'another_old_input' => $user->nama
             ])
           </div>
           <div class="col-12">
             @include('components.input',[
               'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
+              'name' => 'telp',
+              'error_name' => 'telp',
               'title' => 'NO.TELP',
               'type' => 'text',
-              'another_old_input' => ''
+              'another_old_input' => $user->telp
             ])
           </div>
           <div class="col-12">
             @include('components.input',[
               'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
+              'name' => 'email',
+              'error_name' => 'email',
               'title' => 'EMAIL',
-              'type' => 'text',
+              'type' => 'email',
+              'another_old_input' => $user->email
+            ])
+          </div>
+          <div class="col-12">
+            @include('components.input',[
+              'attribute' => '',
+              'name' => 'password',
+              'error_name' => 'password',
+              'title' => 'GANTI PASSWORD BARU',
+              'type' => 'password',
               'another_old_input' => ''
             ])
           </div>
           <div class="col-12">
             @include('components.input',[
               'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
+              'name' => 'password_confirmation',
+              'error_name' => 'password_confirmation',
+              'title' => 'KONFIRMASI PASSWORD BARU',
+              'type' => 'password',
+              'another_old_input' => ''
+            ])
+          </div>
+          <div class="col-12">
+            @include('components.input',[
+              'attribute' => '',
+              'name' => 'jabatan',
+              'error_name' => 'jabatan',
               'title' => 'JABATAN',
               'type' => 'text',
-              'another_old_input' => ''
-            ])
-          </div>
-          <div class="col-12">
-            @include('components.input',[
-              'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
-              'title' => 'MASA KERJA',
-              'type' => 'text',
-              'another_old_input' => ''
+              'another_old_input' => $user->jabatan
             ])
           </div>
         </div>
+          <button class="btn btn-primary btn-block btn-lg shadow-lg mt-5" type="submit">
+           SIMPAN PERBAHARUI DATA
+        </button>
     </form>
   </div>
 </div>
+@endsection
+
+@section('js')
+ <script src="/srcadmin/js/input_image.js"></script>
+ <script src="/assets/extensions/jquery/jquery.min.js"></script>
 @endsection

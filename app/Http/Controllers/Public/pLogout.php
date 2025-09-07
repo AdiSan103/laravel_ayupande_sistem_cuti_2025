@@ -16,13 +16,8 @@ class pLogout extends Controller
     public function index()
     {
         // Hapus cookie dengan memberi nilai null dan waktu -1 menit
-        Cookie::queue(Cookie::forget('angga_bali_trans_perusahaan_induk'));
-
-        // Hapus cookie dengan memberi nilai null dan waktu -1 menit
-        Cookie::queue(Cookie::forget('angga_bali_trans_owner'));
-
-        // Hapus cookie dengan memberi nilai null dan waktu -1 menit
-        Cookie::queue(Cookie::forget('angga_bali_trans_admin'));
+        session()->flush();
+        Cookie::queue(Cookie::forget('TOKEN_LOGIN'));
 
         Alert::success('Logout', 'success');
 

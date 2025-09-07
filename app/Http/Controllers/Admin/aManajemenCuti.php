@@ -2,7 +2,7 @@
  
  namespace App\Http\Controllers\Admin;
  use App\Http\Controllers\Controller;
- 
+use App\Models\CutiModel;
 use App\Models\User;
 use Illuminate\View\View;
  
@@ -13,6 +13,7 @@ class aManajemenCuti extends Controller
      */
     public function index(): View
     {
-        return view('admin.manajemen-cuti.index');
+        $items = CutiModel::get();
+        return view('admin.manajemen-cuti.index', compact('items'));
     }
 }

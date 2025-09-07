@@ -216,7 +216,7 @@
                 <span class="text-danger"
                   ><i class="bi bi-heart-fill icon-mid"></i
                 ></span>
-                by <a href="#">DisanJaya</a>
+                by <a href="#">-</a>
               </p>
             </div>
           </div>

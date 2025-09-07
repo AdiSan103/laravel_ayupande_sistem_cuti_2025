@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\DataJabatan;
 use App\Models\User;
+use App\Models\UserModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use RealRashid\SweetAlert\Facades\Alert;
@@ -23,65 +24,41 @@ class pLogin extends Controller
     
     public function login(Request $request)
     {
-        $email = $request->email;
-        $password = $request->password;
+        // Validasi input
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required|min:6',
+        ]);
 
-        // Perusahaan Induk
-        // if ($email === 'perusahaaninduk@gmail.com' && $password === 'perusahaaninduk') {
-        $user = User::where('email', $email)->first();
-        if($user) {
-            // check password
-            if($user->password == $password) {
-                // Encrypt the value
-                $encryptedValue = Crypt::encryptString('true');
-                // Buat cookie yang berlaku selama 1 hari (1440 menit)
-                Cookie::queue('angga_bali_trans_perusahaan_induk', $encryptedValue, 1440);
+        // Cari user berdasarkan email
+        $user = UserModel::where('email', $request->email)->first();
 
-                Alert::success('Success', 'success');
-
-                return redirect('/pi');
-            }
+        if (!$user) {
+            Alert::info('Akun tidak di temukan', 'hubungi admin sistem!');
+            return back();
         }
 
-
-        // Vendor Check
-        $vendor = DataJabatan::where('email', $email)->whereNotNull('vendor')->first();
-        if ($vendor) {
-            // check password
-            if($vendor->password == $password) {
-
-                // Encrypt the value
-                $encryptedValue = Crypt::encryptString('true');
-                // Buat cookie yang berlaku selama 1 hari (1440 menit)
-                Cookie::queue('angga_bali_trans_owner', $encryptedValue, 1440);
-
-                Alert::success('Success', 'success');
-
-                return redirect('/v');
-
-            }
+        // Cek password
+        if (!Hash::check($request->password, $user->password)) {
+            Alert::info('Akun dan Password Salah!', 'hubungi admin sistem!');
+            return back();
         }
 
-        // Admin Check
-        $admin = DataJabatan::where('email', $email)->whereNotNull('admin')->first();
-        if ($admin) {
-            // check password
-            if($admin->password == $password) {
-                // Encrypt the value
-                $encryptedValue = Crypt::encryptString('true');
-                // Buat cookie yang berlaku selama 1 hari (1440 menit)
-                Cookie::queue('angga_bali_trans_admin', $encryptedValue, 1440);
+        // Simpan email ke cookie selama 1 minggu
+        Cookie::queue('TOKEN_LOGIN', $user->email, 60 * 24 * 7); // 7 hari
 
-                Alert::success('Success', 'success');
+        // Simpan session login
+        // session(['user_id' => $user->id, 'role' => $user->role]);
 
-                return redirect('/a');
-
-            }
+        Alert::success('Berhasil!', 'selamat datang di aplikasi!');
+        // Cek role dan redirect
+        if ($user->role === 'admin') {
+            return redirect('/a');
+        } elseif ($user->role === 'employee') {
+            return redirect('/e');
         }
 
-        Alert::warning('Info', 'email or password does not match.');
-
-        // Authentication Failed
-        return redirect()->back()->with('error', 'Email atau password salah.');
+        Alert::info('Error tidak di kenali!', 'hubungi admin sistem!');
+        return back();
     }
 }

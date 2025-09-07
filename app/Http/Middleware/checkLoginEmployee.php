@@ -2,9 +2,11 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\UserModel;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Crypt;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CheckLoginEmployee
 {
@@ -14,24 +16,24 @@ class CheckLoginEmployee
     public function handle(Request $request, Closure $next)
     {
         // Get the cookie
-        $encryptedValue = $request->cookie('angga_bali_trans_owner');
-
+        $encryptedValue = $request->cookie('TOKEN_LOGIN');
         if ($encryptedValue) {
             try {
                 // Decrypt the value
-                $decryptedValue = Crypt::decryptString($encryptedValue);
-
+                $user = UserModel::where('email', $encryptedValue)->where('role', 'employee')->first();
                 // Check if value is "true"
-                if ($decryptedValue === 'true') {
+                if ($user) {
                     return $next($request);
                 }
             } catch (\Exception $e) {
                 // Decryption failed
+                Alert::info('Error Akun', 'Invalid Session');
                 return redirect('/')->with('error', 'Invalid session');
             }
         }
 
         // Redirect to  if the cookie is missing or invalid
+        Alert::info('Error Akun', 'Invalid Session');
         return redirect('/')->with('error', 'Unauthorized access');
     }
 }

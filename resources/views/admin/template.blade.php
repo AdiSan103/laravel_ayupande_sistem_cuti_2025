@@ -232,7 +232,7 @@
         <footer>
           <div class="footer clearfix mb-0 text-muted">
             <div class="float-start">
-              <p>2023 &copy;  DisanJaya 2025</p>
+              <p>2023 &copy;  - 2025</p>
             </div>
             <div class="float-end">
               <p>
@@ -240,7 +240,7 @@
                 <span class="text-danger"
                   ><i class="bi bi-heart-fill icon-mid"></i
                 ></span>
-                by <a href="#">DisanJaya</a>
+                by <a href="#">-</a>
               </p>
             </div>
           </div>

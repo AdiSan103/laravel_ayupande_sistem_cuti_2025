@@ -1,9 +1,9 @@
-@extends('employee.template')
+@extends('admin.template')
 
 @section('main')
 <div class="card">
   <div class="card-body">
-    <form action="/e/profile/save" method="POST"  enctype="multipart/form-data">
+    <form action="/a/pegawai/{{$user->id}}/updated" method="POST"  enctype="multipart/form-data">
         @csrf
         <div class="row gap-2">
           <div class="col-12">
@@ -21,6 +21,16 @@
               'title' => 'NIP',
               'type' => 'text',
               'another_old_input' =>$user->nip
+            ])
+          </div>
+          <div class="col-12">
+            @include('components.input',[
+              'attribute' => 'disabled',
+              'name' => 'email',
+              'error_name' => 'email',
+              'title' => 'EMAIL',
+              'type' => 'email',
+              'another_old_input' => $user->email
             ])
           </div>
           <div class="col-12">
@@ -65,16 +75,6 @@
           </div>
           <div class="col-12">
             @include('components.input',[
-              'attribute' => 'disabled',
-              'name' => 'email',
-              'error_name' => 'email',
-              'title' => 'EMAIL',
-              'type' => 'email',
-              'another_old_input' => $user->email
-            ])
-          </div>
-          <div class="col-12">
-            @include('components.input',[
               'attribute' => '',
               'name' => 'jabatan',
               'error_name' => 'jabatan',
@@ -85,12 +85,32 @@
           </div>
           <div class="col-12">
             @include('components.input',[
-              'attribute' => 'disabled',
+              'attribute' => '',
               'name' => 'title',
               'error_name' => 'title',
-              'title' => 'MASA KERJA',
-              'type' => 'text',
-              'another_old_input' => $user->masa_kerja . ' hari'
+              'title' => 'MASA KERJA (hari)',
+              'type' => 'number',
+              'another_old_input' => $user->masa_kerja
+            ])
+          </div>
+          <div class="col-12">
+            @include('components.input',[
+              'attribute' => '',
+              'name' => 'password',
+              'error_name' => 'password',
+              'title' => 'GANTI PASSWORD BARU',
+              'type' => 'password',
+              'another_old_input' => ''
+            ])
+          </div>
+          <div class="col-12">
+            @include('components.input',[
+              'attribute' => '',
+              'name' => 'password_confirmation',
+              'error_name' => 'password_confirmation',
+              'title' => 'KONFIRMASI PASSWORD BARU',
+              'type' => 'password',
+              'another_old_input' => ''
             ])
           </div>
         </div>
