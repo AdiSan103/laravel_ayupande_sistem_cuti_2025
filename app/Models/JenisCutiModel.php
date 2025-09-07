@@ -10,14 +10,13 @@ class JenisCutiModel extends Model
     use HasFactory;
 
     protected $table = 'jenis_cuti';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
-        'nama_cuti'
+        'nama_cuti',
     ];
 
-    /**
-     * Relasi ke Cuti
-     */
+    // Relasi ke cuti
     public function cuti()
     {
         return $this->hasMany(CutiModel::class, 'id_jenis_cuti');

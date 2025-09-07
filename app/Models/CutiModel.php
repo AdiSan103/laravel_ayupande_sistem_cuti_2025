@@ -10,6 +10,7 @@ class CutiModel extends Model
     use HasFactory;
 
     protected $table = 'cuti';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'id_user',
@@ -22,20 +23,16 @@ class CutiModel extends Model
         'verifikasi_user_1',
         'verifikasi_user_2',
         'verifikasi_bupati',
-        'status'
+        'status',
     ];
 
-    /**
-     * Relasi ke User
-     */
-    public function user()
+    // Relasi ke pengguna
+    public function pengguna()
     {
-        return $this->belongsTo(UserModel::class, 'id_user');
+        return $this->belongsTo(PenggunaModel::class, 'id_user');
     }
 
-    /**
-     * Relasi ke Jenis Cuti
-     */
+    // Relasi ke jenis cuti
     public function jenisCuti()
     {
         return $this->belongsTo(JenisCutiModel::class, 'id_jenis_cuti');

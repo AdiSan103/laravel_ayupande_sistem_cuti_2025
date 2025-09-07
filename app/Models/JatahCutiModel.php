@@ -10,18 +10,17 @@ class JatahCutiModel extends Model
     use HasFactory;
 
     protected $table = 'jatah_cuti';
+    protected $primaryKey = 'id';
 
     protected $fillable = [
         'id_user',
         'tahun',
-        'jatah_cuti'
+        'jatah_cuti',
     ];
 
-    /**
-     * Relasi ke User
-     */
-    public function user()
+    // Relasi ke pengguna
+    public function pengguna()
     {
-        return $this->belongsTo(UserModel::class, 'id_user');
+        return $this->belongsTo(PenggunaModel::class, 'id_user');
     }
 }
