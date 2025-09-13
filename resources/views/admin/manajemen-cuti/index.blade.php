@@ -30,8 +30,8 @@
                     <tbody>
                       @foreach ($items as $item)
                         <tr>
-                            <td>{{ $item->user->nip }}</td>
-                            <td>{{ $item->user->nama }}</td>
+                            <td>{{ $item->pengguna->nip }}</td>
+                            <td>{{ $item->pengguna->nama }}</td>
                             <td>{{ $item->tgl_awal}}</td>
                             <td>{{$item->tgl_akhir}}</td>
                             <td>{{$item->lama_hari}}</td>

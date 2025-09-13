@@ -9,7 +9,7 @@ class PenggunaModel extends Model
 {
     use HasFactory;
 
-    protected $table = 'pengguna'; // nama tabel
+    protected $table = 'user'; // nama tabel
     protected $primaryKey = 'id';
 
     protected $fillable = [

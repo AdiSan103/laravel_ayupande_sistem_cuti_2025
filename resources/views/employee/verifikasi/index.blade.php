@@ -30,19 +30,22 @@
                     <tbody>
                       @foreach ($items as $item)
                         <tr>
-                            <td>{{ $item->user->nip }}</td>
-                            <td>{{ $item->user->nama }}</td>
+                            <td>{{ $item->pengguna->nip }}</td>
+                            <td>{{ $item->pengguna->nama }}</td>
                             <td>{{ $item->tgl_awal}}</td>
                             <td>{{$item->tgl_akhir}}</td>
                             <td>{{$item->lama_hari}}</td>
                             <td>{{$item->jenisCuti->nama_cuti}}</td>
-                             <td>
-                              <button type="submit" class="btn btn-outline-primary btn-block btn-lg shadow-lg">
+                             <td class="d-flex gap-2">
+                              <a target="_blank" href="/surat/download/1" type="submit" class="btn btn-outline-primary btn-block btn-lg shadow-lg">
                                 DOWNLOAD
-                              </button>
+                              </a>
+                               <a target="_blank" href="/surat/preview/1" type="submit" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">
+                                PREVIEW
+                              </a>
                             </td>
                             <td>
-                              <a href="/e/verifikasi/{{$item->id}}" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">
+                              <a href="/e/verifikasi/{{$item->id}}" class="btn btn-secondary btn-block btn-lg shadow-lg">
                                 DETAIL
                               </a>
                             </td>

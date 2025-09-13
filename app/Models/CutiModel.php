@@ -24,6 +24,8 @@ class CutiModel extends Model
         'verifikasi_user_2',
         'verifikasi_bupati',
         'status',
+        'file_pendukung',
+        'file_sudah_ttd'
     ];
 
     // Relasi ke pengguna

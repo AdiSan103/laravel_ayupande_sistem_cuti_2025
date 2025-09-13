@@ -52,6 +52,7 @@ class aValidasi extends Controller
 
         // Update field non-file
         $cuti_data->status    = $request->status;
+        $cuti_data->alasan    = $request->alasan;
         // $user->    = $request->;
 
         $cuti_data->save();

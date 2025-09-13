@@ -5,7 +5,7 @@
     <div class="card">
       <div class="card-header">
           <h5 class="card-title">
-              DATA CUTI {{$items->user->nama}}
+              DATA CUTI {{$items->pengguna->nama}}
           </h5>
       </div>
       <form  action="/a/validasi/{{$items->id}}/updated" method="POST"   class="card-body">
@@ -18,7 +18,7 @@
                 'error_name' => '',
                 'title' => 'NIP',
                 'type' => 'text',
-                'another_old_input' => $items->user->nip
+                'another_old_input' => $items->pengguna->nip
               ])
             </div>
             <div class="col-12">
@@ -28,7 +28,7 @@
                 'error_name' => '',
                 'title' => 'NAMA',
                 'type' => 'text',
-                'another_old_input' => $items->user->nama
+                'another_old_input' => $items->pengguna->nama
               ])
             </div>
             <div class="col-12">
@@ -38,7 +38,7 @@
                 'error_name' => '',
                 'title' => 'Jabatan',
                 'type' => 'text',
-                'another_old_input' => $items->user->jabatan
+                'another_old_input' => $items->pengguna->jabatan
               ])
             </div>
             <div class="col-12">
@@ -48,7 +48,7 @@
                 'error_name' => '',
                 'title' => 'MASA KERJA',
                 'type' => 'text',
-                'another_old_input' => $items->user->masa_kerja
+                'another_old_input' => $items->pengguna->masa_kerja
               ])
             </div>
             <div class="col-12">
@@ -68,7 +68,7 @@
                 'error_name' => '',
                 'title' => 'TELP',
                 'type' => 'text',
-                'another_old_input' => $items->user->telp
+                'another_old_input' => $items->pengguna->telp
               ])
             </div>
             <div class="col-12">
@@ -92,12 +92,12 @@
               ])
             </div>
             <div class="col-12">
-              <a href="#" target="_blank" class="btn btn-outline-secondary btn-block btn-lg shadow-lg mb-5 mt-5" type="submit">
+              <a href="/{{$items->file_pendukung}}" target="_blank" class="btn btn-outline-secondary btn-block btn-lg shadow-lg mb-5 mt-5" type="submit">
                 Lihat File Pendukung
               </a>
             </div>
             <div class="col-12">
-              <a href="#" target="_blank" class="btn btn-outline-secondary btn-block btn-lg shadow-lg mb-5" type="submit">
+              <a href="/{{$items->file_sudah_ttd}}" target="_blank" class="btn btn-outline-secondary btn-block btn-lg shadow-lg mb-5" type="submit">
                 Lihat File dengan TTD Basah
               </a>
             </div>
@@ -114,11 +114,11 @@
             <div class="col-12">
               @include('components.input',[
                 'attribute' => '',
-                'name' => '',
-                'error_name' => '',
+                'name' => 'alasan',
+                'error_name' => 'alasan',
                 'title' => 'CATATAN ADMIN',
                 'type' => 'text',
-                'another_old_input' => ''
+                'another_old_input' => $items->alasan
               ])
             </div>
         </div>
