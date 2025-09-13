@@ -30,14 +30,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return redirect('/p/login');
+    return redirect('/e/login'); //default employee
 });
 
 // ============ public ============
-Route::get('/p/login', [pLogin::class,'index']);
-Route::post('/p/login/post', [pLogin::class,'login']);
-// Route::get('/p/register', [pRegister::class,'index']);
-// Route::post('/p/register/post', [pRegister::class,'register']);
+Route::get('/e/login', [pLogin::class,'index_employee']);
+Route::post('/e/login/post', [pLogin::class,'login_employee']);
+
+Route::get('/a/login', [pLogin::class,'index_admin']);
+Route::post('/a/login/post', [pLogin::class,'login_admin']);
+
 Route::post('/logout',[pLogout::class, 'index']);
 
 // 

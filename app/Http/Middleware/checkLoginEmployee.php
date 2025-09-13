@@ -19,7 +19,7 @@ class CheckLoginEmployee
         if ($encryptedValue) {
             try {
                 // Decrypt the value
-                $user = UserModel::where('email', $encryptedValue)->where('role', 'employee')->first();
+                $user = UserModel::where('email', $encryptedValue)->whereIn('role', ['admin', 'employee'])->first();
                 // Check if value is "true"
                 if ($user) {
                     return $next($request);
