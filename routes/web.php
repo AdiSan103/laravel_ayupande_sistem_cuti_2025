@@ -36,8 +36,8 @@ Route::get('/', function () {
 // ============ public ============
 Route::get('/p/login', [pLogin::class,'index']);
 Route::post('/p/login/post', [pLogin::class,'login']);
-Route::get('/p/register', [pRegister::class,'index']);
-Route::post('/p/register/post', [pRegister::class,'register']);
+// Route::get('/p/register', [pRegister::class,'index']);
+// Route::post('/p/register/post', [pRegister::class,'register']);
 Route::post('/logout',[pLogout::class, 'index']);
 
 // 
@@ -63,6 +63,8 @@ Route::middleware('checkLoginAdmin')->group(function() {
     Route::get('/a',[aDashboard::class,'index']);
     Route::get('/a/manajemen-cuti',[aManajemenCuti::class,'index']);
     Route::get('/a/pegawai',[aPegawai::class,'index']);
+    Route::get('/a/pegawai/register', [aPegawai::class,'createform']);
+    Route::post('/a/pegawai/register/post', [aPegawai::class,'created']);
     Route::get('/a/pegawai/{id}',[aPegawai::class,'detail']);
     Route::post('/a/pegawai/{id}/updated',[aPegawai::class,'updated']);
     Route::get('/a/rekapitulasi',[aRekapitulasi::class,'index']);

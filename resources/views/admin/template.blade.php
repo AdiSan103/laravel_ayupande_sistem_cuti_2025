@@ -141,6 +141,14 @@
 
                 <li
                   class="sidebar-item ">
+                    <a href="/a/pegawai/register" class='sidebar-link'>
+                        <i class="bi bi-grid-fill"></i>
+                        <span>Tambah Pegawai</span>
+                    </a>
+                </li>
+
+                <li
+                  class="sidebar-item ">
                     <a href="/a/pegawai" class='sidebar-link'>
                         <i class="bi bi-grid-fill"></i>
                         <span>Data Pegawai</span>
