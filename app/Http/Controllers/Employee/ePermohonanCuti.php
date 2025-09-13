@@ -19,7 +19,7 @@ class ePermohonanCuti extends Controller
     public function index(): View
     {
         $jenis_cuti =  JenisCutiModel::get();
-        $verifikator = UserModel::where('role', 'admin')->get();
+        $verifikator = UserModel::get();
         return view('employee.permohonan-cuti.index', compact('jenis_cuti', 'verifikator'));
     }
 
