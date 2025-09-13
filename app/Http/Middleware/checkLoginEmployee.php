@@ -5,7 +5,6 @@ namespace App\Http\Middleware;
 use App\Models\UserModel;
 use Closure;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Crypt;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class CheckLoginEmployee
