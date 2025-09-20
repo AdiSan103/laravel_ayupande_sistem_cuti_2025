@@ -16,7 +16,7 @@
                 </div>
             @endif
 
-            <form action="/p/register/post" method="POST" enctype="multipart/form-data">
+            <form action="/a/pegawai/register/post" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="mb-3">
                     <label>Nama Lengkap</label>

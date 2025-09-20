@@ -25,7 +25,8 @@
     #auth #auth-right {
       background: url('/assets/kominfo.png');
       background-size: cover;
-      background-position: center;    }
+      background-position: center;
+    }
   </style>
   </head>
 
@@ -44,7 +45,7 @@
               Log in with your data that you entered during registration.
             </p>
 
-            <form action="/p/login/post" method="POST">
+            <form action="/e/login/post" method="POST">
             @csrf
               <div class="form-group position-relative has-icon-left mb-4">
                 <input

@@ -13,7 +13,7 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                         <h6 class="text-muted font-semibold">Total Pengajuan Cuti</h6>
-                        <h6 class="font-extrabold mb-0">112.000</h6>
+                        <h6 class="font-extrabold mb-0">{{$totalCuti}}</h6>
                     </div>
                 </div> 
             </div>
@@ -30,7 +30,7 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                         <h6 class="text-muted font-semibold">Menunggu Validasi</h6>
-                        <h6 class="font-extrabold mb-0">183.000</h6>
+                        <h6 class="font-extrabold mb-0">{{$totalPending}}</h6>
                     </div>
                 </div>
             </div>
@@ -47,7 +47,7 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                         <h6 class="text-muted font-semibold">Disetujui</h6>
-                        <h6 class="font-extrabold mb-0">80.000</h6>
+                        <h6 class="font-extrabold mb-0">{{$totalDisetujui}}</h6>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                     </div>
                     <div class="col-md-8 col-lg-12 col-xl-12 col-xxl-7">
                         <h6 class="text-muted font-semibold">Di Tolak</h6>
-                        <h6 class="font-extrabold mb-0">112</h6>
+                        <h6 class="font-extrabold mb-0">{{$totalDitolak}}</h6>
                     </div>
                 </div>
             </div>
@@ -85,15 +85,11 @@
                         <h4 class="card-title">Cuti Tahunan</h4>
                     </div>
                     <div class="card-body">
-                        <p>
-                            Toggle a modal via JavaScript by clicking the button above.
-                            You can use modal to add dialogs to your site for lightboxes, user
-                            notifications, or completely custom content.
-                        </p>
+
                         <!-- Button trigger for basic modal -->
                         <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                             data-bs-target="#default1">
-                            Launch Modal
+                            Buka
                         </button>
 
                         <!--Basic Modal -->
@@ -109,21 +105,12 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>
-                                            Bonbon caramels muffin. Chocolate bar oat cake cookie pastry dragée pastry.
-                                            Carrot cake
-                                            chocolate tootsie roll chocolate bar candy canes biscuit.
+      <ul>
+                <li>Pemohon tersebut berhak atas cuti tahunan setelah menjalani kerja sekurang-kurangnya 1 tahun, contohnya CPNS dan PPPK tidak boleh mengambil cuti tahunan apabila masa kerjanya belum 1 tahun, kecuali dalam kondisi yang sangat mendesak.</li>
+                <li>Pengambilan cuti tidak melebihi batas jatah cuti tahunan.</li>
+                <li>Pemohon mengisi kelengkapan data di Surat Cuti.</li>
+                </ul>
 
-                                            Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet
-                                            roll. Toffee sugar
-                                            plum sugar plum jelly-o jujubes bonbon dessert carrot cake. Cookie dessert
-                                            tart muffin topping
-                                            donut icing fruitcake. Sweet roll cotton candy dragée danish Candy canes
-                                            chocolate bar cookie.
-                                            Gingerbread apple pie oat cake. Carrot cake fruitcake bear claw. Pastry
-                                            gummi bears
-                                            marshmallow jelly-o.
-                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn" data-bs-dismiss="modal">
@@ -148,15 +135,11 @@
                         <h4 class="card-title">Cuti Sakit</h4>
                     </div>
                     <div class="card-body">
-                        <p>
-                            Toggle a modal via JavaScript by clicking the button above.
-                            You can use modal to add dialogs to your site for lightboxes, user
-                            notifications, or completely custom content.
-                        </p>
+
                         <!-- Button trigger for basic modal -->
                         <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                             data-bs-target="#default2">
-                            Launch Modal
+                            Buka
                         </button>
 
                         <!--Basic Modal -->
@@ -172,21 +155,16 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>
-                                            Bonbon caramels muffin. Chocolate bar oat cake cookie pastry dragée pastry.
-                                            Carrot cake
-                                            chocolate tootsie roll chocolate bar candy canes biscuit.
+                                        <ol>
+                                        <li>
+                                            Melampirkan Surat Keterangan Sakit dari Dokter/Klinik ataupun dari Rumah Sakit.  
+                                            Untuk kondisi sakit, jika pegawai tersebut hanya sakit dalam 1 hari maka tidak perlu menggunakan surat cuti, 
+                                            hanya melampirkan surat keterangan sakit dari Dokter/Klinik ataupun dari Rumah Sakit.  
+                                            Jika lebih dari 1 hari harus membuat surat cuti sakit.
+                                        </li>
+                                        <li>Pemohon mengisi kelengkapan data di Surat Cuti.</li>
+                                        </ol>
 
-                                            Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet
-                                            roll. Toffee sugar
-                                            plum sugar plum jelly-o jujubes bonbon dessert carrot cake. Cookie dessert
-                                            tart muffin topping
-                                            donut icing fruitcake. Sweet roll cotton candy dragée danish Candy canes
-                                            chocolate bar cookie.
-                                            Gingerbread apple pie oat cake. Carrot cake fruitcake bear claw. Pastry
-                                            gummi bears
-                                            marshmallow jelly-o.
-                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn" data-bs-dismiss="modal">
@@ -211,15 +189,11 @@
                         <h4 class="card-title">Cuti Melahirkan</h4>
                     </div>
                     <div class="card-body">
-                        <p>
-                            Toggle a modal via JavaScript by clicking the button above.
-                            You can use modal to add dialogs to your site for lightboxes, user
-                            notifications, or completely custom content.
-                        </p>
+
                         <!-- Button trigger for basic modal -->
                         <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                             data-bs-target="#default3">
-                            Launch Modal
+                            Buka
                         </button>
 
                         <!--Basic Modal -->
@@ -235,21 +209,21 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>
-                                            Bonbon caramels muffin. Chocolate bar oat cake cookie pastry dragée pastry.
-                                            Carrot cake
-                                            chocolate tootsie roll chocolate bar candy canes biscuit.
+                                    <ol>
+                                    <li>
+                                        Cuti melahirkan hanya diberikan kepada pegawai perempuan yang sedang hamil dan akan melahirkan.
+                                    </li>
+                                    <li>
+                                        Pegawai ASN mendapatkan jatah cuti melahirkan selama 3 bulan.  
+                                        Cuti melahirkan bisa diambil sebelum melahirkan, misalnya idealnya 1 bulan sebelum hari perkiraan lahir (HPL) 
+                                        atau atas pertimbangan medis, dengan syarat melampirkan surat keterangan hamil dari Dokter/Klinik ataupun Rumah Sakit.  
+                                        Setelah melahirkan, pegawai ASN wajib menyerahkan Surat Keterangan Melahirkan dari Dokter untuk diserahkan ke bagian Kepegawaian.
+                                    </li>
+                                    <li>
+                                        Pemohon mengisi kelengkapan data di Surat Cuti.
+                                    </li>
+                                    </ol>
 
-                                            Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet
-                                            roll. Toffee sugar
-                                            plum sugar plum jelly-o jujubes bonbon dessert carrot cake. Cookie dessert
-                                            tart muffin topping
-                                            donut icing fruitcake. Sweet roll cotton candy dragée danish Candy canes
-                                            chocolate bar cookie.
-                                            Gingerbread apple pie oat cake. Carrot cake fruitcake bear claw. Pastry
-                                            gummi bears
-                                            marshmallow jelly-o.
-                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn" data-bs-dismiss="modal">
@@ -274,11 +248,7 @@
                         <h4 class="card-title">Cuti Karena Alasan Penting</h4>
                     </div>
                     <div class="card-body">
-                        <p>
-                            Toggle a modal via JavaScript by clicking the button above.
-                            You can use modal to add dialogs to your site for lightboxes, user
-                            notifications, or completely custom content.
-                        </p>
+
                         <!-- Button trigger for basic modal -->
                         <button type="button" class="btn btn-outline-primary block" data-bs-toggle="modal"
                             data-bs-target="#default4">
@@ -298,21 +268,29 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <p>
-                                            Bonbon caramels muffin. Chocolate bar oat cake cookie pastry dragée pastry.
-                                            Carrot cake
-                                            chocolate tootsie roll chocolate bar candy canes biscuit.
+                                            <ol>
+                                            <li>
+                                                Pegawai ASN berhak untuk cuti karena alasan penting apabila:
+                                                <ul>
+                                                <li>
+                                                    Keluarga sakit keras atau menemani keluarga rawat inap dengan melampirkan Surat Keterangan Rawat Inap dari Rumah Sakit.
+                                                </li>
+                                                <li>
+                                                    Salah satu keluarga meninggal dunia dengan melampirkan Surat Keterangan Meninggal Dunia.
+                                                </li>
+                                                <li>
+                                                    Melangsungkan perkawinan dengan melampirkan Surat Keterangan paling rendah dari Ketua Rukun Tetangga atau di Bali dengan Kelihan Dinas.
+                                                </li>
+                                                <li>
+                                                    Pegawai mengalami musibah bencana alam dengan melampirkan Surat Keterangan paling rendah dari Ketua Rukun Tetangga atau di Bali dengan Kelihan Dinas.
+                                                </li>
+                                                </ul>
+                                            </li>
+                                            <li>
+                                                Lamanya cuti karena alasan penting ditentukan oleh pejabat yang berwenang memberikan cuti yaitu Kepala Dinas, paling lama 1 (satu) bulan.
+                                            </li>
+                                            </ol>
 
-                                            Gummies bonbon apple pie fruitcake icing biscuit apple pie jelly-o sweet
-                                            roll. Toffee sugar
-                                            plum sugar plum jelly-o jujubes bonbon dessert carrot cake. Cookie dessert
-                                            tart muffin topping
-                                            donut icing fruitcake. Sweet roll cotton candy dragée danish Candy canes
-                                            chocolate bar cookie.
-                                            Gingerbread apple pie oat cake. Carrot cake fruitcake bear claw. Pastry
-                                            gummi bears
-                                            marshmallow jelly-o.
-                                        </p>
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn" data-bs-dismiss="modal">
@@ -335,7 +313,7 @@
     <!-- content right -->
     <div class="col-lg-6 col-12">
         <div class="row">
-            <div class="col-12">
+            {{-- <div class="col-12">
                 <div class="card">
                     <div class="card-header">
                         <h4>Profile Visit</h4>
@@ -344,10 +322,10 @@
                         <div id="chart-profile-visit"></div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="card">
                 <div class="card-header">
-                    <h4>Visitors Profile</h4>
+                    <h4>Total Cuti</h4>
                 </div>
                 <div class="card-body">
                     <div id="chart-visitors-profile"></div>
@@ -383,8 +361,8 @@
     // Visitors Profile (donut chart)
     let optionsVisitorsProfile = {
         series: @json($visitorsProfile),
-        labels: ["Tahunan", "Sakit", "Lainnya"],
-        colors: ["#435ebe", "#55c6e8"],
+        labels: ["Cuti Tahunan", "Cuti Sakit", "Cuti Melahirkan", "Cuti Alasan Penting"],
+        colors: ["#ffd000", "#ff0d00", "#0037ff", "#00ffee"],
         chart: { type: "donut", width: "100%", height: "350px" },
         legend: { position: "bottom" },
         plotOptions: {

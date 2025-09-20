@@ -29,10 +29,10 @@ class aPegawai extends Controller
         return view('admin.pegawai.detail',compact('user'));
     }
 
-    public function updated(Request $request)
+    public function updated(Request $request, $id)
     {
         // Ambil user dari cookie
-        $user = UserModel::firstWhere('email', $request->cookie('TOKEN_LOGIN'));
+        $user = UserModel::firstWhere('id', $id);
         if (!$user) {
             return back()->withErrors(['auth' => 'User tidak ditemukan.'])->withInput();
         }

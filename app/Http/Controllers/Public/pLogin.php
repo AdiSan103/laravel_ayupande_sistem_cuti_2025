@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Public;
 use App\Http\Controllers\Controller;
 use App\Models\DataJabatan;
+use App\Models\JatahCutiModel;
 use App\Models\User;
 use App\Models\UserModel;
 use Illuminate\Http\Request;
@@ -19,7 +20,7 @@ class pLogin extends Controller
      */
     public function index_employee()
     {
-        return view('login');
+        return view('employee.login');
     }
     
     public function login_employee(Request $request)
@@ -38,6 +39,28 @@ class pLogin extends Controller
             return back();
         }
 
+        // Cek Jatah CUTI TAHUNAN 📅
+        // Tahun sekarang
+        $tahunSekarang = now()->year;
+
+        // Cek apakah sudah ada jatah cuti di tahun ini untuk user
+        $jatahCutiTahunan = JatahCutiModel::where('id_user', $user->id)
+            ->where('tahun', $tahunSekarang)
+            // ->where('created_at', '<', $user->created_at)
+            ->first(); // pakai first(), bukan get()
+
+        if (!$jatahCutiTahunan) {
+            // Jika belum ada, buatkan
+            JatahCutiModel::create([
+                'id_user'    => $user->id,
+                'tahun'      => $tahunSekarang,
+                'jatah_cuti' => 12
+            ]);
+        }
+
+
+
+
         // Cek password
         if (!Hash::check($request->password, $user->password)) {
             Alert::info('Akun dan Password Salah!', 'hubungi admin sistem!');
@@ -52,9 +75,7 @@ class pLogin extends Controller
 
         Alert::success('Berhasil!', 'selamat datang di aplikasi!');
         // Cek role dan redirect
-        if ($user->role === 'employee') {
-            return redirect('/e');
-        } 
+        return redirect('/e');
 
         Alert::info('Error tidak di kenali!', 'hubungi admin sistem!');
         return back();
@@ -62,7 +83,7 @@ class pLogin extends Controller
 
         public function index_admin()
     {
-        return view('login');
+        return view('admin.login');
     }
     
     public function login_admin(Request $request)
