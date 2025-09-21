@@ -16,6 +16,16 @@
                 'attribute' => 'disabled',
                 'name' => '',
                 'error_name' => '',
+                'title' => 'NO SURAT',
+                'type' => 'text',
+                'another_old_input' => $items->no_surat
+              ])
+            </div>
+            <div class="col-12">
+              @include('components.input',[
+                'attribute' => 'disabled',
+                'name' => '',
+                'error_name' => '',
                 'title' => 'NIP',
                 'type' => 'text',
                 'another_old_input' => $items->pengguna->nip
@@ -86,6 +96,16 @@
                 'attribute' => 'disabled',
                 'name' => '',
                 'error_name' => '',
+                'title' => 'ALASAN',
+                'type' => 'text',
+                'another_old_input' => $items->alasan
+              ])
+            </div>
+            <div class="col-12">
+              @include('components.input',[
+                'attribute' => 'disabled',
+                'name' => '',
+                'error_name' => '',
                 'title' => 'MASA CUTI',
                 'type' => 'text',
                 'another_old_input' => $items->lama_hari . ' hari'
@@ -114,11 +134,11 @@
             <div class="col-12">
               @include('components.input',[
                 'attribute' => '',
-                'name' => 'alasan',
-                'error_name' => 'alasan',
+                'name' => 'catatan_admin',
+                'error_name' => 'catatan_admin',
                 'title' => 'CATATAN ADMIN',
                 'type' => 'text',
-                'another_old_input' => $items->alasan
+                'another_old_input' => $items->catatan_admin
               ])
             </div>
         </div>

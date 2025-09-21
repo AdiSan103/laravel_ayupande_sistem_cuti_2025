@@ -1,3 +1,21 @@
+<?php
+use Carbon\Carbon;
+
+function hitungMasaKerja(int $masaKerjaHari, string $createdAt): string
+{
+    $today = Carbon::now();
+    $createdAt = Carbon::parse($createdAt)->addDays($masaKerjaHari);
+
+    $diff = $createdAt->diff($today);
+
+    $tahun = $diff->y;
+    $bulan = $diff->m;
+    $hari  = $diff->d;
+
+    return "{$tahun} tahun {$bulan} bulan {$hari} hari";
+}
+
+?>
 @extends('admin.template')
 
 @section('main')
@@ -22,7 +40,7 @@
               <td>{{$item->jabatan}}</td>
               <td>{{$item->telp}}</td>
               <td>{{$item->email}}</td>
-              <td>{{$item->masa_kerja}}</td>
+              <td>{{hitungMasaKerja($item->masa_kerja, $item->created_at)}}</td>
               <td>
                 <a href="/a/pegawai/{{$item->id}}" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">DETAIL</a>
               </td>

@@ -25,7 +25,9 @@ class CutiModel extends Model
         'verifikasi_bupati',
         'status',
         'file_pendukung',
-        'file_sudah_ttd'
+        'file_sudah_ttd',
+        'no_surat',
+        'catatan_admin'
     ];
 
     // Relasi ke pengguna

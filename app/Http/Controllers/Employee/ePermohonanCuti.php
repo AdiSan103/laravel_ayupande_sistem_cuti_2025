@@ -59,6 +59,7 @@ class ePermohonanCuti extends Controller
         // 4) Simpan via Eloquent
         CutiModel::create([
             'id_user'            => $user->id,
+            'no_surat'           => $request->no_surat,
             'id_jenis_cuti'      => $request->jenis_cuti,
             'alasan'             => $request->alasan,
             'tgl_awal'           => $start->toDateString(),

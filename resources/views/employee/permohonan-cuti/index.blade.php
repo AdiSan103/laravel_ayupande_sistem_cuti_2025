@@ -18,6 +18,16 @@
         @csrf
         <div class="row gap-2">
           <div class="col-12">
+            @include('components.input',[
+              'attribute' => '',
+              'name' => 'no_surat',
+              'error_name' => 'no_surat',
+              'title' => 'Nomor Surat',
+              'type' => 'text',
+              'another_old_input' => ''
+            ])
+          </div>
+          <div class="col-12">
             @include('components.select',[
               'title' => 'jenis cuti',
               'name' => 'jenis_cuti',

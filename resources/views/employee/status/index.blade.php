@@ -18,6 +18,7 @@
                     <thead>
                         <tr>
                             <th>NIP</th>
+                             <th>TANGGAL DIBUAT</th>
                             <th>NAMA</th>
                             <th>TANGGAL AWAL CUTI</th>
                             <th>TANGGAL AKHIR CUTI</th>
@@ -31,6 +32,7 @@
                       @foreach ($items as $item)
                         <tr>
                             <td>{{ $item->pengguna->nip }}</td>
+                            <td>{{ $item->updated_at }}</td>
                             <td>{{ $item->pengguna->nama }}</td>
                             <td>{{ $item->tgl_awal}}</td>
                             <td>{{$item->tgl_akhir}}</td>
