@@ -47,6 +47,7 @@ class aPegawai extends Controller
             'telp'           => 'nullable|string',
             'password'       => 'nullable|min:6|confirmed',
             'jabatan'        => 'nullable|string|max:255',
+            'masa_kerja'     => 'nullable|integer',
             'foto'           => 'nullable|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
@@ -57,6 +58,7 @@ class aPegawai extends Controller
         $user->tempat_lahir    = $request->tempat_lahir;
         $user->tanggal_lahir    = $request->tanggal_lahir;
         $user->telp    = $request->telp;
+        $user->masa_kerja    = $request->masa_kerja;
         $user->jabatan = $request->jabatan;
 
         if($request->password) {

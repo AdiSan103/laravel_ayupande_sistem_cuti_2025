@@ -86,8 +86,8 @@
           <div class="col-12">
             @include('components.input',[
               'attribute' => '',
-              'name' => 'title',
-              'error_name' => 'title',
+              'name' => 'masa_kerja',
+              'error_name' => 'masa_kerja',
               'title' => 'MASA KERJA (hari)',
               'type' => 'number',
               'another_old_input' => $user->masa_kerja
