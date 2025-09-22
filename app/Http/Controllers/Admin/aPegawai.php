@@ -12,6 +12,7 @@ use Illuminate\Support\Str;
 use Illuminate\Support\Facades\File;
 use RealRashid\SweetAlert\Facades\Alert;
 use Illuminate\Support\Facades\Hash;
+use Carbon\Carbon;
 
 
 class aPegawai extends Controller
@@ -21,7 +22,7 @@ class aPegawai extends Controller
      */
     public function index()
     {
-        $users =  UserModel::where('role', '!=', 'admin')->get();
+        $users =  UserModel::where('soft_delete', null)->get();
         return view('admin.pegawai.index', compact('users'));
     }
     public function detail($id) {
@@ -161,5 +162,35 @@ class aPegawai extends Controller
 
         Alert::success('Berhasil', 'berhasil membuat akun');
         return redirect()->back()->with('success', 'Registrasi berhasil! Silakan login.');
+    }
+
+    public function deleted($id) {
+
+        // Ambil user dari cookie
+        $user = UserModel::firstWhere('id', $id);
+        if (!$user) {
+            return back()->withErrors(['auth' => 'User tidak ditemukan.'])->withInput();
+        }
+
+        $user->soft_delete = Carbon::now();
+        $user->save();
+
+        Alert::success('User Deleted', 'Berhasil Menghapus User');
+        return redirect()->back();
+    }
+
+     public function restore($id) {
+
+        // Ambil user dari cookie
+        $user = UserModel::firstWhere('id', $id);
+        if (!$user) {
+            return back()->withErrors(['auth' => 'User tidak ditemukan.'])->withInput();
+        }
+
+        $user->soft_delete = null;
+        $user->save();
+
+        Alert::success('User Restore', 'Berhasil Mengembalikan User');
+        return redirect()->back();
     }
 }

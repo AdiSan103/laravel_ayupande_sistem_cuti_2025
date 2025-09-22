@@ -43,6 +43,12 @@ function hitungMasaKerja(int $masaKerjaHari, string $createdAt): string
               <td>{{hitungMasaKerja($item->masa_kerja, $item->created_at)}}</td>
               <td>
                 <a href="/a/pegawai/{{$item->id}}" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">DETAIL</a>
+                <form action="/a/pegawai/{{$item->id}}/deleted" method="POST">
+                  @csrf
+                  <button onclick="return confirm('Yakin hapus?')" type="submit" class="btn btn-outline-danger btn-block btn-lg shadow-lg">
+                    DELETE
+                  </button>
+                </form>
               </td>
             </tr>
           @endforeach

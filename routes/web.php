@@ -68,6 +68,8 @@ Route::middleware('checkLoginAdmin')->group(function() {
     Route::get('/a/pegawai/register', [aPegawai::class,'createform']);
     Route::post('/a/pegawai/register/post', [aPegawai::class,'created']);
     Route::get('/a/pegawai/{id}',[aPegawai::class,'detail']);
+    Route::post('/a/pegawai/{id}/deleted',[aPegawai::class,'deleted']);
+    Route::post('/a/pegawai/{id}/restore',[aPegawai::class,'restore']);
     Route::post('/a/pegawai/{id}/updated',[aPegawai::class,'updated']);
     Route::get('/a/rekapitulasi',[aRekapitulasi::class,'index']);
     Route::get('/a/rekapitulasi/{id}',[aRekapitulasi::class,'detail']);

@@ -13,7 +13,10 @@ class aManajemenCuti extends Controller
      */
     public function index(): View
     {
-        $items = CutiModel::get();
+        $items = CutiModel::whereHas('pengguna', function ($q) {
+            $q->whereNull('soft_delete');
+        })->with('pengguna')->get();
+
         return view('admin.manajemen-cuti.index', compact('items'));
     }
 }

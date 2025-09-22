@@ -23,7 +23,8 @@ class UserModel extends Authenticatable
         'telp',
         'email',
         'jabatan',
-        'masa_kerja'
+        'masa_kerja',
+        'soft_delete'
     ];
 
     /**

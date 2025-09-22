@@ -3,35 +3,41 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class PenggunaModel extends Model
+class PenggunaModel extends Authenticatable
 {
-    use HasFactory;
+    use HasFactory, Notifiable;
 
-    protected $table = 'user'; // nama tabel
-    protected $primaryKey = 'id';
+    protected $table = 'user';
 
     protected $fillable = [
         'role',
         'foto',
         'nip',
         'nama',
+        'password',
         'tempat_lahir',
         'tanggal_lahir',
         'telp',
         'email',
         'jabatan',
         'masa_kerja',
+        'soft_delete'
     ];
 
-    // Relasi ke jatah cuti (1 pengguna bisa punya banyak jatah cuti)
+    /**
+     * Relasi ke Jatah Cuti
+     */
     public function jatahCuti()
     {
         return $this->hasMany(JatahCutiModel::class, 'id_user');
     }
 
-    // Relasi ke cuti (1 pengguna bisa punya banyak cuti)
+    /**
+     * Relasi ke Cuti
+     */
     public function cuti()
     {
         return $this->hasMany(CutiModel::class, 'id_user');

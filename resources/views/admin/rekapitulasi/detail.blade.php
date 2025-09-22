@@ -7,6 +7,28 @@
         @csrf
         <div class="row gap-2">
           <div class="col-12">
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Cuti Tahunan</th>
+                        <th>Cuti Sakit</th>
+                        <th>Cuti Melahirkan</th>
+                        <th>Cuti Alasan Penting</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ $cTahunan }}</td>
+                        <td>{{ $cSakit }}</td>
+                        <td>{{ $cMelahirkan }}</td>
+                        <td>{{ $cAlasanPenting }}</td>
+                    </tr>
+                </tbody>
+            </table>
+
+          </div>
+          <div class="col-12">
             @include('components.input_image',[
               'name' => 'foto',
               'title' => 'Foto',

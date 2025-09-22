@@ -1,3 +1,22 @@
+<?php
+use Carbon\Carbon;
+
+function hitungMasaKerja(int $masaKerjaHari, string $createdAt): string
+{
+    $today = Carbon::now();
+    $createdAt = Carbon::parse($createdAt)->addDays($masaKerjaHari);
+
+    $diff = $createdAt->diff($today);
+
+    $tahun = $diff->y;
+    $bulan = $diff->m;
+    $hari  = $diff->d;
+
+    return "{$tahun} tahun {$bulan} bulan {$hari} hari";
+}
+
+?>
+
 @extends('employee.template')
 
 @section('main')
@@ -90,7 +109,7 @@
               'error_name' => 'title',
               'title' => 'MASA KERJA',
               'type' => 'text',
-              'another_old_input' => $user->masa_kerja . ' hari'
+              'another_old_input' => hitungMasaKerja($user->masa_kerja, $user->created_at)
             ])
           </div>
         </div>

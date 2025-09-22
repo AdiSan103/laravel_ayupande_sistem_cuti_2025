@@ -16,7 +16,9 @@ class aValidasi extends Controller
      */
     public function index(): View
     {
-        $items = CutiModel::where('status', 'pending')->get();
+        $items = CutiModel::where('status', 'pending')->whereHas('pengguna', function ($q) {
+            $q->whereNull('soft_delete');
+        })->with('pengguna')->get();
         return view('admin.validasi.index', compact('items'));
     }
 
