@@ -39,10 +39,10 @@
                             <td>{{$item->lama_hari}}</td>
                             <td>{{$item->jenisCuti->nama_cuti}}</td>
                              <td class="d-flex gap-2">
-                              <a target="_blank" href="/surat/download/1" type="submit" class="btn btn-outline-primary btn-block btn-lg shadow-lg">
+                              <a target="_blank" href="/surat/download/{{$item->id}}" type="submit" class="btn btn-outline-primary btn-block btn-lg shadow-lg">
                                 DOWNLOAD
                               </a>
-                               <a target="_blank" href="/surat/preview/1" type="submit" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">
+                               <a target="_blank" href="/surat/preview/{{$item->id}}" type="submit" class="btn btn-outline-secondary btn-block btn-lg shadow-lg">
                                 PREVIEW
                               </a>
                             </td>
