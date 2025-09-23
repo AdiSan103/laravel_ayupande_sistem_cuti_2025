@@ -6,6 +6,16 @@
     <form action="/a/profile/save" method="POST"  enctype="multipart/form-data">
         @csrf
         <div class="row gap-2">
+           <div class="col-12">
+            @include('components.input',[
+              'attribute' => 'readonly',
+              'name' => '',
+              'error_name' => '',
+              'title' => 'Peran Anda',
+              'type' => 'text',
+              'another_old_input' => $user->role
+            ])
+          </div>
           <div class="col-12">
             @include('components.input',[
               'attribute' => '',

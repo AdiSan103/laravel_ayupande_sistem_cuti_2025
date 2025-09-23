@@ -32,7 +32,7 @@ class pLogin extends Controller
         ]);
 
         // Cari user berdasarkan email
-        $user = UserModel::where('email', $request->email)->first();
+        $user = UserModel::where('soft_delete', null)->where('email', $request->email)->first();
 
         if (!$user) {
             Alert::info('Akun tidak di temukan', 'hubungi admin sistem!');
@@ -95,7 +95,7 @@ class pLogin extends Controller
         ]);
 
         // Cari user berdasarkan email
-        $user = UserModel::where('email', $request->email)->first();
+        $user = UserModel::where('soft_delete', null)->where('email', $request->email)->first();
 
         if (!$user) {
             Alert::info('Akun tidak di temukan', 'hubungi admin sistem!');
